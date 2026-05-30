@@ -43,17 +43,6 @@ func main() {
 		go CallDeepSeekAPI(zjprompt, row[0], row[1], i)
 
 	}
-	// for j, r := range rows {
-	// 	if j == 0 {
-	// 		continue
-	// 	}
-	// 	if r[3] == "否" {
-	// 		continue
-	// 	}
-	// 	wg.Add(1)
-	// 	zjprompt := fmt.Sprintf("%s,这是小说大纲，现在写%s的内容，写5000字的小说，要有详细的性爱描写。", prompts, r[1])
-	// 	go CallDeepSeekAPI(zjprompt, r[0], r[1], j)
-	// }
 	wg.Wait()
 	title := rows[1][0]
 	xsList, err := getXs(title)
